@@ -7,7 +7,7 @@ public class Game {
 	private char lastMoved = 'Q';
 	private boolean finished = false;
 			
-	public boolean setOnField(int y, int x) {
+	private boolean setOnField(int y, int x) {
 		if(gameField[y][x] == 0 && nowMoving != gameField[y][x]) {
 			gameField[y][x] = nowMoving;
 			nowMoving = lastMoved;
@@ -15,6 +15,47 @@ public class Game {
 			return true;
 		}
 		return false;
+	}
+	
+	public void setOnField(int fieldNumber) {
+		switch(fieldNumber) {
+			case 1: {
+				this.setOnField(0, 0);
+				break;
+			}
+			case 2: {
+				this.setOnField(0, 1);
+				break;
+			}
+			case 3: {
+				this.setOnField(0, 2);
+				break;
+			}
+			case 4: {
+				this.setOnField(1, 0);
+				break;
+			}
+			case 5: {
+				this.setOnField(1, 1);
+				break;
+			}
+			case 6: {
+				this.setOnField(1, 2);
+				break;
+			}
+			case 7: {
+				this.setOnField(2, 0);
+				break;
+			}
+			case 8: {
+				this.setOnField(2, 1);
+				break;
+			}
+			case 9: {
+				this.setOnField(2, 2);
+				break;
+			}
+		}
 	}
 	
 	public char checkWinner() {
@@ -73,7 +114,7 @@ public class Game {
 			finished = true;
 			return 'D';			
 		}
-		
+
 		return 0;
 	}
 	
@@ -89,7 +130,7 @@ public class Game {
 	}
 	
 	public void printField() {
-		System.out.println("\n\n\n\n\n\n\n");
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		checkWinner();
 		int offset = 0;
 		int c = 1;
