@@ -18,7 +18,7 @@ public class Main {
 			
 			int chosenField = scanner.nextInt();
 			game.setOnField(chosenField);
-			
+						
 		}
 		System.exit(0);
 	}
